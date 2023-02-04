@@ -1,14 +1,22 @@
-import java.io.File;
-import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Test4 {
+    public static void main(String[] args) {
 
-    public static void main(String[] args) throws IOException {
+        HashMap<String, String> states = new HashMap<String, String>();
 
-        File f = new File("G:\\abc.txt");
-        f.createNewFile();
-        // throws is an indication there is a need of
-        // exception handling here try/catch
-        // please do it.
+        // put() method
+
+        states.put("Tx", "Texas");
+        states.put("Al", "Alabama");
+        states.put("Ar", "Arizona");
+        states.put("Ca", "California");
+
+        System.out.println(states);
+
+        for (Map.Entry<String, String> e : states.entrySet()) {
+            System.out.println(e.getKey() + " --- " + e.getValue());
+        }
     }
 }

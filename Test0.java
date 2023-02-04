@@ -1,14 +1,23 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
 
 public class Test0 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws Exception {
 
-        System.out.println("Hey buddy how old are you ?");
-        int age = sc.nextInt();
-        System.out.println("Woha! You have really grown up! you are " + age + " years old");
+        FileReader fr = new FileReader("G:\\java\\myTestFile.txt");
+        BufferedReader br = new BufferedReader(fr);
+        String line;
 
-        //checked execptions are checked at compile time eg. IOException
-        //unchecked execptions are checked at runtime eg. InputmismatchException
+        // till the time value of line variable is not matching with null keep
+        // running the loop
+
+        ArrayList<String> pokemons = new ArrayList<String>();
+        br.readLine();
+        while ((line = br.readLine()) != null) {
+            System.out.println(line);
+        }
+        br.close();
+        fr.close();
     }
 }
